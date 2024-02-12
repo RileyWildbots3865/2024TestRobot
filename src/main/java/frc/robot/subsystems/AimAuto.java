@@ -10,11 +10,19 @@ import frc.robot.Constants.AimConstants;
 
 public class AimAuto extends SubsystemBase {
   /** Creates a new AimAuto. */
-  public AimAuto() {}
+  double deltay = AimConstants.deltay;
+  double newdeltay = deltay + AimConstants.y3;
+
+  public double GetAngle() {
+    double a = Math.abs(LimelightHelpers.getCameraPose3d_TargetSpace("").getZ());
+    double theta = Math.atan(newdeltay/a) * (180/ Math.PI);
+    double round = ((1/8.0) * Math.round(8*theta));
+    return round;
+  } 
+
 
   @Override
   public void periodic() {
-    double tz = LimelightHelpers.getCameraPose3d_TargetSpace("").getZ();
-    
+    // This method will be called once per scheduler run
   }
 }

@@ -4,13 +4,11 @@
 
 package frc.robot;
 
-import edu.wpi.first.math.geometry.Pose3d;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.LimelightHelpers;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.subsystems.Blinkin;
+import frc.robot.subsystems.AimAuto;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -21,7 +19,9 @@ import frc.robot.subsystems.Blinkin;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private RobotContainer m_robotContainer;
-  private Blinkin blinkin;
+  private AimAuto m_aimAuto;
+  
+  
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -32,7 +32,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
-    blinkin.lightsAuto();
+    m_aimAuto = new AimAuto();
   }
 
   /**
@@ -87,7 +87,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-
+    SmartDashboard.putNumber("Angle", m_aimAuto.GetAngle());
   }
 
   @Override
