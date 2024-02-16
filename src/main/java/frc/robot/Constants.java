@@ -29,8 +29,11 @@ public final class Constants {
     public static final double error = 0.25;
     public static final double y3 = 0.5345684 + error;
   }
-  public static class Electrical {
+  public static class Extra {
     public static final int lights = 0;
+    public static final int intakeMotor = 0;
+    public static final int intakeAngleMotor = 0;
+    public static final int shooterMotor = 0;
   }
   public static final class DriveConstants {
     public static final double kSpeedFactor = 0.5;
@@ -40,9 +43,9 @@ public final class Constants {
     public static final double kMaxAngularSpeed = 2 * Math.PI; // radians per second
 
     // Chassis configuration
-    public static final double kTrackWidth = Units.inchesToMeters(12.25);
+    public static final double kTrackWidth = Units.inchesToMeters(24.875);
     // Distance between centers of right and left wheels on robot
-    public static final double kWheelBase = Units.inchesToMeters(24.5);
+    public static final double kWheelBase = Units.inchesToMeters(24.25);
     // Distance between front and back wheels on robot
     public static final SwerveDriveKinematics kDriveKinematics = new SwerveDriveKinematics(
         new Translation2d(kWheelBase / 2, kTrackWidth / 2),
