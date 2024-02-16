@@ -34,6 +34,10 @@ public final class Constants {
     public static final int intakeMotor = 0;
     public static final int intakeAngleMotor = 0;
     public static final int shooterMotor = 0;
+    public static final int leftFrontMotor = 0;
+    public static final int leftBackMotor = 0;
+    public static final int rightFrontMotor = 0;
+    public static final int rightBackMotor = 0;
   }
   public static final class DriveConstants {
     public static final double kSpeedFactor = 0.5;
