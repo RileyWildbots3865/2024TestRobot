@@ -39,6 +39,8 @@ public final class Constants {
     public static final int leftBackMotor = 6;
     public static final int rightFrontMotor = 7;
     public static final int rightBackMotor = 8;
+    public static final double shooterSpeed = .25;
+    public static final double intakeSpeed = .25;
   }
   public static final class DriveConstants {
     public static final double kSpeedFactor = 0.5;
@@ -57,12 +59,6 @@ public final class Constants {
         new Translation2d(kWheelBase / 2, -kTrackWidth / 2),
         new Translation2d(-kWheelBase / 2, kTrackWidth / 2),
         new Translation2d(-kWheelBase / 2, -kTrackWidth / 2));
-
-    // Angular offsets of the modules relative to the chassis in radians
-    //public static final double kFrontLeftChassisAngularOffset = -Math.PI / 2;
-    //public static final double kFrontRightChassisAngularOffset = 0;
-    //public static final double kBackLeftChassisAngularOffset = Math.PI;
-    //public static final double kBackRightChassisAngularOffset = Math.PI / 2;
 
     public static final double kFrontLeftChassisAngularOffset = 5.658;
     public static final double kFrontRightChassisAngularOffset = 3.592;

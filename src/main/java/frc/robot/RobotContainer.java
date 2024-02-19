@@ -6,8 +6,10 @@ package frc.robot;
 
 import java.util.List;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
+import edu.wpi.first.wpilibj2.command.button.CommandPS4Controller;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.PIDController;
@@ -41,7 +43,7 @@ public class RobotContainer {
 
   // The driver's controller
   PS4Controller m_driverOne = new PS4Controller(OperatorConstants.kOneControllerPort);
-  PS4Controller m_driverTwo = new PS4Controller(OperatorConstants.kTwoControllerPort);
+  CommandPS4Controller m_driverTwo = new CommandPS4Controller(OperatorConstants.kTwoControllerPort);
   private final subIntake sIntake = new subIntake();
   private final subIntakeAngle sIntakeAngle = new subIntakeAngle();
   private final subShooter sShooter = new subShooter();
@@ -81,6 +83,11 @@ public class RobotContainer {
         .whileTrue(new RunCommand(
             () -> m_robotDrive.setX(),
             m_robotDrive));
+
+    m_driverTwo.triangle().onTrue(new InstantCommand(() -> sShooter.leftFrontMotor.set(Constants.Extra.shooterSpeed)));
+    m_driverTwo.triangle().onTrue(new InstantCommand(() -> sShooter.rightFrontMotor.set(Constants.Extra.shooterSpeed)));
+
+    m_driverTwo.square().onTrue(new InstantCommand(() -> sIntake.intakeMotor.set(Constants.Extra.intakeSpeed)));
   }
 
   /**
