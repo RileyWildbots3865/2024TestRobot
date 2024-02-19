@@ -20,7 +20,8 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
   public static class OperatorConstants {
-    public static final int kDriverControllerPort = 0;
+    public static final int kOneControllerPort = 0;
+    public static final int kTwoControllerPort = 1;
   }
   public static class AimConstants {
     public static final double y2 = 1.450975; //Height of AprilTag to ground (meters) (57.125 inches)
@@ -30,14 +31,14 @@ public final class Constants {
     public static final double y3 = 0.5345684 + error;
   }
   public static class Extra {
-    public static final int lights = 0;
-    public static final int intakeMotor = 0;
-    public static final int intakeAngleMotor = 0;
-    public static final int shooterMotor = 0;
-    public static final int leftFrontMotor = 0;
-    public static final int leftBackMotor = 0;
-    public static final int rightFrontMotor = 0;
-    public static final int rightBackMotor = 0;
+    public static final int lights = 1;
+    public static final int intakeMotor = 2;
+    public static final int intakeAngleMotor = 3;
+    public static final int shooterMotor = 4;
+    public static final int leftFrontMotor = 5;
+    public static final int leftBackMotor = 6;
+    public static final int rightFrontMotor = 7;
+    public static final int rightBackMotor = 8;
   }
   public static final class DriveConstants {
     public static final double kSpeedFactor = 0.5;

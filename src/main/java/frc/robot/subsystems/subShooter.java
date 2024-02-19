@@ -18,19 +18,19 @@ public class subShooter extends SubsystemBase {
   public CANSparkMax rightBackMotor;
 
   public subShooter() {
-    leftFrontMotor = new CANSparkMax(Extra.leftFrontMotor, MotorType.kBrushed);
+    leftFrontMotor = new CANSparkMax(Extra.leftFrontMotor, MotorType.kBrushless);
     leftFrontMotor.restoreFactoryDefaults();
     
-    leftBackMotor = new CANSparkMax(Extra.leftBackMotor, MotorType.kBrushed);
+    leftBackMotor = new CANSparkMax(Extra.leftBackMotor, MotorType.kBrushless);
     leftBackMotor.restoreFactoryDefaults();
     leftBackMotor.follow(leftFrontMotor, false);
 
-    rightFrontMotor = new CANSparkMax(Extra.rightFrontMotor, MotorType.kBrushed);
+    rightFrontMotor = new CANSparkMax(Extra.rightFrontMotor, MotorType.kBrushless);
     rightFrontMotor.restoreFactoryDefaults();
     
-    rightBackMotor = new CANSparkMax(Extra.rightBackMotor, MotorType.kBrushed);
+    rightBackMotor = new CANSparkMax(Extra.rightBackMotor, MotorType.kBrushless);
     rightBackMotor.restoreFactoryDefaults();
-    rightBackMotor.follow(leftFrontMotor, false);
+    rightBackMotor.follow(rightFrontMotor, false);
   }
 
   @Override

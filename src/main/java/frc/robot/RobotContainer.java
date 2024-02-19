@@ -4,6 +4,11 @@
 
 package frc.robot;
 
+import java.util.List;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.RunCommand;
+import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.controller.ProfiledPIDController;
@@ -23,11 +28,6 @@ import frc.robot.subsystems.subIntake;
 import frc.robot.subsystems.subIntakeAngle;
 import frc.robot.subsystems.subShooter;
 import frc.robot.subsystems.subShooterAngle;
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.RunCommand;
-import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import java.util.List;
 
 /*
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -40,8 +40,8 @@ public class RobotContainer {
   private final DriveSubsystem m_robotDrive = new DriveSubsystem();
 
   // The driver's controller
-  PS4Controller m_driverOne = new PS4Controller(OperatorConstants.kDriverControllerPort);
-  PS4Controller m_driverTwo = new PS4Controller(OperatorConstants.kDriverControllerPort);
+  PS4Controller m_driverOne = new PS4Controller(OperatorConstants.kOneControllerPort);
+  PS4Controller m_driverTwo = new PS4Controller(OperatorConstants.kTwoControllerPort);
   private final subIntake sIntake = new subIntake();
   private final subIntakeAngle sIntakeAngle = new subIntakeAngle();
   private final subShooter sShooter = new subShooter();
@@ -65,8 +65,6 @@ public class RobotContainer {
                 MathUtil.applyDeadband(-m_driverOne.getRightX()*Constants.DriveConstants.kSpeedFactor, 0.06),
                 true),
             m_robotDrive));
-    
-    
   }
 
   /**
