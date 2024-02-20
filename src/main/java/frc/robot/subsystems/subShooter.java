@@ -10,8 +10,9 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import frc.robot.Constants.Extra;
 
-public class subShooter extends SubsystemBase {
+//public class subShooter extends SubsystemBase {
   /** Creates a new subShooter. */
+  /* 
   public CANSparkMax leftFrontMotor;
   public CANSparkMax leftBackMotor;
   public CANSparkMax rightFrontMotor;
@@ -38,3 +39,4 @@ public class subShooter extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 }
+*/

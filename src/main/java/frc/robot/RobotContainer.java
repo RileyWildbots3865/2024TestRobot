@@ -25,11 +25,12 @@ import edu.wpi.first.wpilibj.PS4Controller.Button;
 import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OperatorConstants;
+import frc.robot.subsystems.AimAuto;
 import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.subIntake;
-import frc.robot.subsystems.subIntakeAngle;
-import frc.robot.subsystems.subShooter;
-import frc.robot.subsystems.subShooterAngle;
+//import frc.robot.subsystems.subIntake;
+//import frc.robot.subsystems.subIntakeAngle;
+//import frc.robot.subsystems.subShooter;
+//import frc.robot.subsystems.subShooterAngle;
 
 /*
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -44,10 +45,11 @@ public class RobotContainer {
   // The driver's controller
   PS4Controller m_driverOne = new PS4Controller(OperatorConstants.kOneControllerPort);
   CommandPS4Controller m_driverTwo = new CommandPS4Controller(OperatorConstants.kTwoControllerPort);
-  private final subIntake sIntake = new subIntake();
-  private final subIntakeAngle sIntakeAngle = new subIntakeAngle();
-  private final subShooter sShooter = new subShooter();
-  private final subShooterAngle sShooterAngle = new subShooterAngle();
+  //private final subIntake sIntake = new subIntake();
+  //private final subIntakeAngle sIntakeAngle = new subIntakeAngle();
+  //private final subShooter sShooter = new subShooter();
+  //private final subShooterAngle sShooterAngle = new subShooterAngle();
+  private final AimAuto aimAuto = new AimAuto();
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -84,10 +86,12 @@ public class RobotContainer {
             () -> m_robotDrive.setX(),
             m_robotDrive));
 
-    m_driverTwo.triangle().onTrue(new InstantCommand(() -> sShooter.leftFrontMotor.set(Constants.Extra.shooterSpeed)));
-    m_driverTwo.triangle().onTrue(new InstantCommand(() -> sShooter.rightFrontMotor.set(Constants.Extra.shooterSpeed)));
+    //m_driverTwo.triangle().onTrue(new InstantCommand(() -> sShooter.leftFrontMotor.set(Constants.Extra.shooterSpeed)));
+    //m_driverTwo.triangle().onTrue(new InstantCommand(() -> sShooter.rightFrontMotor.set(Constants.Extra.shooterSpeed)));
 
-    m_driverTwo.square().onTrue(new InstantCommand(() -> sIntake.intakeMotor.set(Constants.Extra.intakeSpeed)));
+    //m_driverTwo.square().onTrue(new InstantCommand(() -> sIntake.intakeMotor.set(Constants.Extra.intakeSpeed)));
+
+    //m_driverTwo.L2().toggleOnTrue(new InstantCommand(() -> aimAuto.GetAngle())); // take a look at this, its not finished, it only gets the angle
   }
 
   /**

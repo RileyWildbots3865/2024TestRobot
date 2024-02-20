@@ -31,16 +31,17 @@ public final class Constants {
     public static final double y3 = 0.5345684 + error;
   }
   public static class Extra {
-    public static final int lights = 1;
-    public static final int intakeMotor = 2;
-    public static final int intakeAngleMotor = 3;
-    public static final int shooterMotor = 4;
-    public static final int leftFrontMotor = 5;
-    public static final int leftBackMotor = 6;
-    public static final int rightFrontMotor = 7;
-    public static final int rightBackMotor = 8;
+    /*public static final int lights = 9;
+    public static final int intakeMotor = 10;
+    public static final int intakeAngleMotor = 11;
+    public static final int shooterMotor = 12;
+    public static final int leftFrontMotor = 13;
+    public static final int leftBackMotor = 14;
+    public static final int rightFrontMotor = 15;
+    public static final int rightBackMotor = 16;
     public static final double shooterSpeed = .25;
     public static final double intakeSpeed = .25;
+    */
   }
   public static final class DriveConstants {
     public static final double kSpeedFactor = 0.5;
@@ -66,15 +67,15 @@ public final class Constants {
     public static final double kBackRightChassisAngularOffset = 2.666;
 
     // SPARK MAX CAN IDs
-    public static final int kFrontLeftDrivingCanId = 4;
-    public static final int kRearLeftDrivingCanId = 6;
-    public static final int kFrontRightDrivingCanId = 2;
-    public static final int kRearRightDrivingCanId = 8;
+    public static final int kFrontLeftDrivingCanId = 5;
+    public static final int kRearLeftDrivingCanId = 7;
+    public static final int kFrontRightDrivingCanId = 3;
+    public static final int kRearRightDrivingCanId = 2;
 
-    public static final int kFrontLeftTurningCanId = 3;
-    public static final int kRearLeftTurningCanId = 5;
-    public static final int kFrontRightTurningCanId = 1;
-    public static final int kRearRightTurningCanId = 7;
+    public static final int kFrontLeftTurningCanId = 6;
+    public static final int kRearLeftTurningCanId = 8;
+    public static final int kFrontRightTurningCanId = 4;
+    public static final int kRearRightTurningCanId = 1;
 
     public static final boolean kFrontLeftDrivingReversed = false;//true;
     public static final boolean kRearLeftDrivingReversed = false;//true;

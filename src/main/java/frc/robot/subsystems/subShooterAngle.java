@@ -5,12 +5,14 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import frc.robot.Constants.Extra;
 
-public class subShooterAngle extends SubsystemBase {
+//public class subShooterAngle extends SubsystemBase {
   /** Creates a new subShooterAngle. */
+  /* 
   public CANSparkMax shooterAngleMotor;
   public subShooterAngle() {
     shooterAngleMotor = new CANSparkMax(Extra.intakeAngleMotor, MotorType.kBrushed);
@@ -22,3 +24,4 @@ public class subShooterAngle extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 }
+*/
